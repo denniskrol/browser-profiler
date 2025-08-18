@@ -1,0 +1,36 @@
+{
+  "name": "browser-profiles",
+  "version": "0.1.0",
+  "description": "Lightweight, modular browser profiler to collect non-invasive fingerprint signals and POST them to a backend.",
+  "license": "MIT",
+  "author": "",
+  "type": "module",
+  "sideEffects": false,
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "clean": "rimraf dist",
+    "dev": "tsup --watch"
+  },
+  "devDependencies": {
+    "tsup": "^8.2.4",
+    "typescript": "^5.5.4",
+    "rimraf": "^6.0.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
+
