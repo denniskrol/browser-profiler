@@ -5,7 +5,7 @@ export async function collectWebGL(): Promise<PartialProfile> {
     const canvas = document.createElement('canvas')
     const gl = (canvas.getContext('webgl') || canvas.getContext('webgl-experimental')) as WebGLRenderingContext | null
     if (!gl) {
-      return { webglRenderer: null, webglVendor: null, webglExtensions: [] }
+      return { webglRenderer: null, webglVendor: null }
     }
 
     let webglRenderer: string | null = null
@@ -21,16 +21,9 @@ export async function collectWebGL(): Promise<PartialProfile> {
       }
     }
 
-    let webglExtensions: string[] = []
-    try {
-      webglExtensions = gl.getSupportedExtensions() ?? []
-    } catch {
-      // ignore
-    }
-
-    return { webglRenderer, webglVendor, webglExtensions }
+    return { webglRenderer, webglVendor }
   } catch {
-    return { webglRenderer: null, webglVendor: null, webglExtensions: [] }
+    return { webglRenderer: null, webglVendor: null }
   }
 }
 

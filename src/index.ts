@@ -31,7 +31,6 @@ function baseProfile(): DeviceProfile {
     devicePixelRatio: null,
     webglRenderer: null,
     webglVendor: null,
-    webglExtensions: [],
     webGpuArchitecture: null,
     webGpuVendor: null,
     storageQuota: null,

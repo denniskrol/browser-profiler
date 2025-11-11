@@ -34,7 +34,6 @@ export interface DeviceProfile {
   devicePixelRatio: number | null
   webglRenderer: string | null
   webglVendor: string | null
-  webglExtensions: string[]
   webGpuArchitecture: string | null
   webGpuVendor: string | null
   storageQuota: StorageQuotaInfo | null
