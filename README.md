@@ -1,16 +1,17 @@
-# browser-profiles
+# Browser Profiler
 
 Lightweight, modular browser profiler to collect non-invasive fingerprint signals and POST them to a backend.
 
 - Outputs ESM and CJS bundles
 - Modular collectors (basic, WebGL, WebGPU, storage quota, memory, fonts, UA-CH)
-- Defaults to POST http://127.0.0.1 with JSON body { profile }
+- Defaults to POST http://127.0.0.1 with JSON body `{ profile }`
 
 Install
 - npm install
 - npm run build
 
 Usage (ESM)
+```js
 import { collectProfile, collectAndSend, sendProfile } from 'browser-profiles'
 
 // Collect only
@@ -24,12 +25,15 @@ await sendProfile(profile, {
   endpoint: 'https://api.example.com/deviceprofiles',
   headers: { 'X-CSRF-Token': '...' },
 })
+```
 
 Customize fonts
+```js
 import { collectProfile } from 'browser-profiles'
 import { FONT_LIST } from 'browser-profiles/dist/constants/fonts'
 
 const profile2 = await collectProfile({ fontList: [ ...FONT_LIST, 'My Custom Font' ] })
+```
 
 Notes
 - WebGPU fields may be null if unsupported or if adapter info is restricted.
